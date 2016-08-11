@@ -1,0 +1,39 @@
+<div>
+  Cluster ID: {{clusterId}}
+</div>
+
+<br/>
+<br/>
+
+<div *ngIf="cluster">
+
+  <div>
+  Cluster name: {{cluster.name}}
+  <br/>
+</div>
+
+<br/>
+<br/>
+<div *ngIf="filteredHosts">
+  <div *ngFor="let ud of filteredHosts">
+ 
+      Name: {{ud.name}}
+      
+      <br/>
+      State: {{ud.state}}
+      <br/>
+      Processor count: {{ud.processorCount}}
+      <br/>
+      Physical memory value:
+       {{ud.physicalMemory.value}}
+       <br/>
+	    Physical memory unit:
+       {{ud.physicalMemory.unit}}
+    <br/>
+    
+  <div>
+    <button (click)="onNavigate(ud.hostId)">go to host</button>
+  </div>
+
+  </div>
+</div>
